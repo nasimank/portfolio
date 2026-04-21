@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CREATIVE STUDIO| Digital Excellence</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    animation: { 'marquee': 'marquee 30s linear infinite' },
+                    keyframes: {
+                        marquee: {
+                            '0%': { transform: 'translateX(0%)' },
+                            '100%': { transform: 'translateX(-50%)' },
+                        }
+                    }
+                }
+            }
+        }
+
+        // Apply dark mode immediately to prevent flickering
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark')
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+
+        function toggleTheme() {
+            document.documentElement.classList.toggle('dark');
+            localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+        }
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .glass {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+        }
+        /* Dark mode variant for glass effect */
+        .dark .glass {
+            background: rgba(15, 23, 42, 0.8);
+            border-color: rgba(51, 65, 85, 1);
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-300">
+
+    <nav class="fixed top-0 w-full z-50 glass border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold tracking-tighter text-indigo-600">CREATIVE STUDIO<span class="text-slate-400">.</span></h1>
+            
+            <div class="flex items-center gap-8">
+                <ul class="hidden md:flex gap-8 font-medium text-sm uppercase tracking-widest text-slate-600 dark:text-slate-400">
+                    <li><a href="#home" class="hover:text-indigo-600 transition">Home</a></li>
+                    <li><a href="#about" class="hover:text-indigo-600 transition">About</a></li>
+                    <li><a href="#projects" class="hover:text-indigo-600 transition">Projects</a></li>
+                    <li><a href="#contact" class="hover:text-indigo-600 transition">Contact</a></li>
+                </ul>
+               
+
+                <button onclick="toggleTheme()" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-yellow-400 hover:ring-2 ring-indigo-500 transition-all">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="min-h-screen flex flex-col justify-center items-center text-center px-6 pt-20 bg-white dark:bg-slate-950 relative overflow-hidden transition-colors">
+        <div class="absolute -top-24 -right-24 w-96 h-96 bg-indigo-50 dark:bg-indigo-900/20 rounded-full blur-3xl"></div>
+        <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-blue-50 dark:bg-blue-900/20 rounded-full blur-3xl"></div>
+
+        <span class="text-indigo-600 dark:text-indigo-400 font-semibold tracking-widest uppercase text-sm mb-4">Design   Develop   Deliver</span>
+        <h2 class="text-5xl md:text-7xl font-bold text-slate-900 dark:text-white leading-tight max-w-4xl">
+            We build modern <span class="text-indigo-600">digital experiences.</span>
+        </h2>
+        <p class="mt-6 text-lg text-slate-500 dark:text-slate-400 max-w-xl">
+            Transforming complex ideas into elegant, user-centric web solutions for forward-thinking brands.
+        </p>
+        <div class="mt-10 flex gap-4">
+            <a href="#projects" class="bg-indigo-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-indigo-700 transition shadow-lg shadow-indigo-200 dark:shadow-none">
+                View Our Work
+            </a>
+            <a href="#contact" class="border border-slate-200 dark:border-slate-700 px-8 py-4 rounded-full font-semibold hover:bg-slate-50 dark:hover:bg-slate-900 transition">
+                Get in Touch
+            </a>
+        </div>
+    </section>
+
+    <main id="about" class="min-h-screen py-32 px-6 bg-white dark:bg-slate-950 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-12 gap-16 items-start">
+                <div class="lg:col-span-7 space-y-12">
+                    <div>
+                        <span class="text-[10px] font-black uppercase tracking-[0.5em] text-indigo-600 bg-indigo-50 dark:bg-indigo-900/30 px-4 py-2 rounded-full">
+                             Studio Philosophy
+                        </span>
+                        <h2 class="text-7xl md:text-8xl font-black tracking-tighter text-slate-600 dark:text-slate-300 leading-[0.9] mt-8">
+                            Precision <br>
+                            <span class="text-indigo-400">Performance.</span>
+                        </h2>
+                    </div>
+
+                    <div class="max-w-2xl border-l-4 border-slate-900 dark:border-indigo-500 pl-8">
+                        <p class="text-2xl text-slate-800 dark:text-slate-200 font-semibold mb-6">
+                            I bridge the gap between complex <span class="italic font-serif text-indigo-600">AI</span> and seamless UX.
+                        </p>
+                        <p class="text-lg text-slate-500 dark:text-slate-400">
+                            Leveraging R&D and Frontend Architecture, I specialize in building "Intelligent Interfaces."
+                        </p>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="bg-slate-900 dark:bg-slate-900/50 p-12 rounded-[3rem] text-white border dark:border-slate-800">
+                        <h4 class="text-6xl font-black mb-4">99<span class="text-indigo-500">%</span></h4>
+                        <p class="text-slate-400">Consistent project delivery across full-stack systems.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <section id="projects" class="py-24 px-6 bg-slate-900 text-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="mb-12">
+                <h2 class="text-4xl font-bold">Featured Projects</h2>
+                <p class="text-slate-400 mt-2">A selection of our latest work.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="group cursor-pointer">
+                    <div class="h-64 bg-slate-800 rounded-3xl mb-4 overflow-hidden relative border border-slate-700">
+                        <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&q=80" alt="Web Design" class="w-full h-full object-cover group-hover:scale-110 transition duration-500 opacity-60">
+                        <div class="absolute top-6 left-6">
+                            <span class="px-3 py-1 bg-indigo-600 text-xs font-bold rounded-full uppercase">Web Design</span>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold group-hover:text-indigo-400 transition">Portfolio Website</h3>
+                </div>
+                <div class="group cursor-pointer">
+                    <div class="h-64 bg-slate-800 rounded-3xl mb-4 overflow-hidden relative border border-slate-700">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80" alt="Development" class="w-full h-full object-cover group-hover:scale-110 transition duration-500 opacity-60">
+                        <div class="absolute top-6 left-6">
+                            <span class="px-3 py-1 bg-indigo-600 text-xs font-bold rounded-full uppercase">Development</span>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold group-hover:text-indigo-400 transition">Business Platform</h3>
+                </div>
+                <div class="group cursor-pointer">
+                    <div class="h-64 bg-slate-800 rounded-3xl mb-4 overflow-hidden relative border border-slate-700">
+                        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80" alt="E-commerce" class="w-full h-full object-cover group-hover:scale-110 transition duration-500 opacity-60">
+                        <div class="absolute top-6 left-6">
+                            <span class="px-3 py-1 bg-indigo-600 text-xs font-bold rounded-full uppercase">E-commerce</span>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold group-hover:text-indigo-400 transition">NK Store</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 px-6 dark:bg-slate-950">
+        <div class="max-w-xl mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-4 dark:text-white">Let's work together</h2>
+            <p class="text-slate-500 dark:text-slate-400 mb-10">Have a project in mind? Reach out and let's make it happen.</p>
+
+            <form class="space-y-4">
+                <div class="grid grid-cols-2 gap-4">
+                    <input type="text" placeholder="Name" class="w-full p-4 rounded-xl border border-slate-200 dark:border-slate-800 dark:bg-slate-900 outline-none focus:ring-2 focus:ring-indigo-500 transition">
+                    <input type="email" placeholder="Email" class="w-full p-4 rounded-xl border border-slate-200 dark:border-slate-800 dark:bg-slate-900 outline-none focus:ring-2 focus:ring-indigo-500 transition">
+                </div>
+                <textarea rows="4" placeholder="Your Message" class="w-full p-4 rounded-xl border border-slate-200 dark:border-slate-800 dark:bg-slate-900 outline-none focus:ring-2 focus:ring-indigo-500 transition"></textarea>
+                <button class="bg-slate-900 dark:bg-indigo-600 text-white font-bold py-4 px-8 rounded-xl w-full hover:opacity-90 transition transform active:scale-95">
+                    Send Message
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="py-12 border-t border-slate-200 dark:border-slate-800 text-center text-slate-400 text-sm">
+        <p>  2026 Creative Studio. Built with Precision.</p>
+    </footer>
+
+</body>
+</html>
